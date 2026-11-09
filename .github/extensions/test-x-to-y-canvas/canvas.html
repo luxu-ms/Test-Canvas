@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Test X-to-Y canvas</title>
+  <link rel="stylesheet" href="canvas.css">
+  <script type="module" src="canvas.js"></script>
+</head>
+<body>
+  <main>
+    <header>
+      <div><p class="eyebrow">MIGRATION WORKSPACE</p><h1>X-to-Y migration</h1></div>
+      <span id="progress">0 of 0 tasks done</span>
+    </header>
+    <p class="intro">Define where your repository is today and where it needs to go.</p>
+    <p id="message" role="status" aria-live="polite">Loading saved plan...</p>
+    <form id="editor">
+      <fieldset id="fields" disabled>
+        <section>
+          <h2>Repository</h2>
+          <label for="repoUrl">Repository URL</label>
+          <input id="repoUrl" type="url" maxlength="2048" placeholder="https://github.com/owner/repository">
+          <a id="repoLink" target="_blank" rel="noopener noreferrer" hidden>Open repository</a>
+        </section>
+        <section class="transition">
+          <div><label for="currentState">X - Current state</label><input id="currentState" maxlength="500" placeholder="For example: JavaScript"></div>
+          <span aria-hidden="true" class="arrow">-&gt;</span>
+          <div><label for="targetState">Y - Target state</label><input id="targetState" maxlength="500" placeholder="For example: TypeScript"></div>
+        </section>
+        <section>
+          <h2>Migration plan</h2>
+          <label for="plan">Approach, milestones, and acceptance criteria</label>
+          <textarea id="plan" rows="9" maxlength="100000" placeholder="Describe the incremental migration plan..."></textarea>
+          <p class="hint">Plain text. Plan content is never executed or rendered as HTML.</p>
+        </section>
+        <section>
+          <div class="section-heading"><h2>Tasks</h2><button id="addTask" type="button">+ Add task</button></div>
+          <p id="emptyTasks" class="hint">No tasks yet. Add the first migration step.</p>
+          <ul id="tasks"></ul>
+        </section>
+        <footer><button id="save" type="submit" class="primary">Save plan</button><button id="reload" type="button">Reload saved plan</button><span class="hint">Saved to migration-plan.json in this workspace.</span></footer>
+      </fieldset>
+    </form>
+  </main>
+</body>
+</html>
