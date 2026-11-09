@@ -1,0 +1,6 @@
+{
+  "name": "test-x-to-y-canvas",
+  "version": "0.1.0",
+  "description": "A Copilot app canvas for a repository's X-to-Y migration plan and tasks.",
+  "extensions": [".github/extensions"]
+}
